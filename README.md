@@ -1,7 +1,7 @@
 # Tools for code and countermeasures analysis against multiple faults attacks - PhD Thesis Defense Presentation (french)
 
 <p align="center">
-  <a href="phd-thesis-defense-fr.pdf"><img src="cover.png" title="Manuscript defense presentation cover page"></a>
+  <a href="phd-thesis-defense-fr.pdf"><img src="cover.bmp" title="Manuscript defense presentation cover page"></a>
 </p>
 
 This repository contains the LaTeX source code of the presentation for my PhD Thesis.
