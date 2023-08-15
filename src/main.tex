@@ -1,0 +1,136 @@
+\documentclass[xcolor=table,usenames,dvipsnames]{lib/bredelebeamer}
+
+\usepackage{multirow}
+\usepackage{listings,pdfpages,tabulary}
+
+\makeatletter
+\let\beamer@writeslidentry@miniframeson=\beamer@writeslidentry
+\def\beamer@writeslidentry@miniframesoff{%
+    \expandafter\beamer@ifempty\expandafter{\beamer@framestartpage}{}
+    {
+        \clearpage\beamer@notesactions%
+    }
+}
+\newcommand*{\miniframeson}{\let\beamer@writeslidentry=\beamer@writeslidentry@miniframeson}
+\newcommand*{\miniframesoff}{\let\beamer@writeslidentry=\beamer@writeslidentry@miniframesoff}
+\makeatother
+
+\setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+
+\title[PhD Thesis defense]{Tools for code and countermeasures analysis against multiple faults attacks}
+\subtitle{PhD Thesis defense}
+\subject{PhD Thesis defense - Boespflug Etienne}
+
+\author[Etienne Boespflug]{Etienne Boespflug}
+
+\date{April 28, 2023}
+
+\logo{
+    \includegraphics[scale=0.08]{img/logo_VERIMAG.png}
+}
+
+\newcommand{\ignore}[1]{} % inline comment simulation. 
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+    \begin{center}
+        {\small Supervised by Marie-Laure Potet and Laurent Mounier}
+    \end{center}
+    
+    \vspace{0.1cm}
+    
+    \begin{center}
+        \noindent \tiny 
+        \begin{tabular}{llcl}
+            \textit{Rapporteurs :}	& Karine \textsc{Heydemann}		& - & Maître de conférences (Sorbonne Université)\\
+                    & Julien \textsc{Signoles}		& - & Ingénieur de recherche (CEA Saclay)\\
+            \textit{Directeur :}	& Marie-Laure \textsc{Potet}		& - & Professeur des universités (Grenoble INP)\\
+            \textit{Examinateurs :}   & Vincent \textsc{Beroulle}          & - & Professeur des universités (Grenoble INP)\\
+                        & Thomas \textsc{Jensen}			& - & Directeur de recherche (INRIA de Rennes)\\
+            \textit{Invités :}		& David \textsc{Féliot}		& - & Ingénieur (CEA Leti)\\
+                        & Laurent \textsc{Mounier}		& - & Maître de conférences (Université Grenoble Alpes)\\
+        \end{tabular}
+        \vfill
+        {\tiny Supported by SECURIOT-2-AAP FUI 23, by ANR-15-IDEX-02 and LabEx PERSYVAL-Lab (ANR-11-LABX-0025-01)}
+    \end{center}
+
+\end{frame}
+
+\definecolor{darkblue}{rgb}{0,0,0.5}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstdefinestyle{customc}{
+    numbers=left,
+    belowcaptionskip=1\baselineskip,
+    breaklines=true,
+    xleftmargin=\parindent,
+    language=C,
+    showstringspaces=false,
+    basicstyle=\tiny\ttfamily,
+    keywordstyle=\bfseries\color{dkgreen},
+    commentstyle=\itshape\color{red},
+    identifierstyle=\color{blue},
+    stringstyle=\color{mauve},
+    numberstyle=\ttfamily
+}
+
+\lstdefinestyle{custompython}{
+    language=Python, 
+    commentstyle=\color{dkgreen},
+    keywordstyle=\color{red},
+    identifierstyle=\color{blue},
+    emph={testfunc,print,src},
+    numberstyle=\tiny\color{gray},
+    stringstyle=\color{mauve},
+    basicstyle=\tiny\ttfamily,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\setcounter{tocdepth}{1}
+\AtBeginSection[]
+{
+\begin{frame}<beamer>[noframenumbering, plain]
+  \frametitle{Outline}
+  \tableofcontents[currentsection]
+\end{frame}
+}
+
+\include{context}
+
+\include{lazart}
+
+\include{placement}
+
+\include{ccpo}
+
+\include{conclusion}
+
+\include{annexes}
+
+\miniframesoff
+\begin{frame}[allowframebreaks, noframenumbering]{References}
+   \nocite{*}   
+ 
+    {\footnotesize 
+        \bibliography{lib/biblio}{} 
+        \bibliographystyle{unsrt}
+    }
+    \vfill
+\end{frame}
+
+\end{document}
+

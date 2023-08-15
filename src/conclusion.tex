@@ -1,0 +1,247 @@
+\section{Conclusion and future work}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame} \frametitle{Conclusion} 
+{\small
+
+
+    Robustness evaluation with Lazart
+    \begin{itemize}
+        \item filter of multi-fault attacks: equivalence and redundancy
+        \item combination of fault models
+        \item user accessibility, case studies
+        \item[] 
+    \end{itemize}
+
+    Countermeasures evaluation
+    \begin{itemize}
+        \item isolation analysis
+        \item placement algorithms
+        \item[] $\rightarrow$ gives strong guarantees, even if the trace set is incomplete 
+        \item[] $\rightarrow$ allows combination of fault model in multiple faults
+        \item detector optimization algorithm
+        \item[] $\rightarrow$ up to 80\% of \texttt{detectors} removed
+        \item[]
+    \end{itemize}
+
+     
+{\tiny
+        \textbf{Publications:}
+        \begin{itemize}
+            \item \textit{Combining Static Analysis and Dynamic Symbolic Execution in a Toolchain to detect Fault Injection Vulnerabilities}
+            \item[] Guilhem Lacombe, David Féliot, Etienne Boespflug and Marie-Laure Potet, \textit{Journal of Cryptography Engineering 2023}
+            \item[]
+            \item \textit{Combining Static Analysis and Dynamic Symbolic Execution in a Toolchain to detect Fault Injection Vulnerabilities}
+            \item[] Guilhem Lacombe, David Féliot, Etienne Boespflug and Marie-Laure Potet, \textit{PROOFS Workshop 2021}
+            \item[]
+            \item \textit{Countermeasures Optimization in Multiple Fault-Injection Context}
+            \item[] Etienne Boespflug, Cristian Ene, Marie-Laure Potet and Laurent Mouniter, \textit{FDTC 2020}
+        \end{itemize}
+}
+\vfill
+}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame} \frametitle{Future Works} 
+{\tiny
+
+
+    Tools:
+    \begin{itemize}
+        \item Extension of fault models in Lazart
+        \item Extension of automated countermeasures in Lazart
+        \item Validate contribution on more example programs
+        \item Combination with static analysis
+        \item "fault-aware" dynamic-symbolic execution engine
+        \item [] 
+    \end{itemize}
+    
+    \onslide<2->{
+    Countermeasure placement:
+    \begin{itemize}
+        \item Study of countermeasures without IP granularity
+        \item Study of countermeasures propagating states (SSCF, Swift...)
+        \item[] $\rightarrow$ may require to consider two isolation analysis cases: sane CM's inputs and corrupted CM's inputs
+        \item Study of more complex CFG fault models
+        \item [] $\rightarrow$ requires to take into account the several entry and output points of the protection scheme
+        \item Extension of notion of \textit{adequation}, \textit{perfection} of CMs and \textit{protectability} of fault models
+        \item[] 
+    \end{itemize}
+    }
+    
+    \onslide<3->{
+    Countermeasure optimization:
+    \begin{itemize}
+        \item Switch to Lazart 4
+        \item Fully symbolic version (relax constraints on detectors)
+        \item[] $\rightarrow$ internal states may be difficult to consider
+        \item Study of other countermeasures
+        \item[] 
+    \end{itemize}
+    }
+
+\vfill
+}
+\end{frame}
+
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame} \frametitle{Future Works} 
+{\tiny
+
+
+\begin{columns}
+        
+    \begin{column}{0.3\textwidth}
+    Implementation:
+    \begin{itemize}
+        \item Extension of fault model in Lazart
+        \item Extension of automated countermeasures in Lazart
+        \item Validate contribution on more example program
+        \item Binary level implementation
+        \item [] 
+        \item[] 
+        \item[] 
+        \item[] 
+    \end{itemize}
+    \end{column}
+    
+    \begin{column}{0.4\textwidth}
+    \onslide<2->{
+    Countermeasure placement
+    \begin{itemize}
+        \item Study of countermeasures without IP granularity
+        \item Study of countermeasures propagating states 
+        \item[] $\rightarrow$ may require to consider two isolation analysis cases: sane CM's inputs and corrupted CM's inputs
+        \item Study of more complex fault models
+        \item [] $\rightarrow$ requires to take into account the several entry and output points of the protection scheme
+        \item Study of incomplete catalogs
+        \item[] 
+    \end{itemize}
+    }
+    \end{column}
+    
+    \begin{column}{0.4\textwidth}
+    \onslide<3->{
+    Countermeasure optimization
+    \begin{itemize}
+        \item Fully symbolic version (relax constraints on detectors)
+        \item How to protect detectors with other fault models ?
+        \item Over-approximation approaches 
+        \item[] 
+        \item[] 
+        \item[] 
+        \item[] 
+        \item[] 
+    \end{itemize}
+    }
+    \end{column}
+    
+        
+\end{columns}
+\vspace{0.2cm}
+
+\vfill
+}
+\end{frame}
+    
+\end{comment}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile, noframenumbering] \frametitle{The End} 
+\vspace{1cm}
+\begin{center}
+    {\large Thanks for watching}
+\end{center}
+\vfill
+\end{frame}
+
+\begin{comment}
+
+\subsection{Conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile] \frametitle{Conclusion} 
+\begin{itemize}
+    \item A methodology to \textit{optimize} program protected by \textit{side-effect free} detectors (up to 80\% of \texttt{detectors} removed)
+    \item[]
+    \item Only one program exploration $\rightarrow$ realistic analysis time for real world programs
+    \item[]
+    \item The methodology is generic regarding to the analysis level and trace generation method
+    
+\end{itemize}
+\vfill
+\end{frame}
+
+
+
+\subsection{Conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame} \frametitle{Conclusion} 
+{\small
+
+\begin{itemize}
+    \item Robustness of placement depend on the property of the catalog
+    \item[]
+    \item P' is guaranteed as robust if the required protection coefficients (K) are available
+    \item[] $\rightarrow$ if not, attack traces on P' are known
+    \item []$\rightarrow$ more robust than P even if trace set is incomplete
+    \item[]
+    \item Optimal placement is guaranteed with ILP
+    \item[]
+    \item Protection weight: $rep < bloc < min < atk < naive$ 
+    \item[]
+\end{itemize}
+
+            \begin{table}[h]
+                {\tiny
+                \begin{center}%\setlength\tabcolsep{1.5pt}
+\begin{tabular}{l|l|ll|l|lll}
+Algorithme & Type & \multicolumn{2}{l|}{Guarantees $P'$} & Complexity & \multicolumn{3}{l}{Required analysis} \\
+ &  & Robust & Optimal &  & AA & Red & HS \\
+ \hline
+naive & syst. & \checkmark & - & $O(t)$ & \checkmark & - & - \\
+atk & syst. & \checkmark & - & $O(t)$ & \checkmark & - & - \\
+min & syst. & \checkmark & - & $O(t)$ & \checkmark & \checkmark & - \\
+bloc-h & bloc & \checkmark & - & $O(t)$ & \checkmark & \checkmark & \checkmark \\
+rep-opt & distributed & \checkmark & \checkmark & NP-Complete & \checkmark & \checkmark & - \\
+\end{tabular}
+                \end{center} 
+                }
+                \end{table}
+    
+
+\begin{itemize}
+    \item Placement algorithm is slow compared to DSE and redundancy analysis
+    \item[] $\rightarrow$ event with optimal algorithm and ILP (1-fault attacks)
+\end{itemize}
+}
+\vfill
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame} \frametitle{Future Works} 
+{\small
+
+
+
+\begin{itemize}
+    \item Study of countermeasures without IP granularity
+    \item[]
+    \item Study of countermeasures propagating states 
+    \item[] $\rightarrow$ may require to consider two isolation analysis cases: sane CM's inputs and corrupted CM's inputs
+    \item[]
+    \item Study of more complex fault models
+    \item [] $\rightarrow$ requires to take into account the several entry and output points of the protection scheme
+    \item[]
+    \item Study of incomplete catalogs
+\end{itemize}
+
+\vfill
+}
+\end{frame}
+\end{comment}
